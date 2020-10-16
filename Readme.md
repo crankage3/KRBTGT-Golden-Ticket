@@ -20,12 +20,26 @@ This original script can be found [here](https://github.com/microsoft/New-Krbtgt
     1. Go to Admin -> Secret Templates
     2. Click "Create New"
     3. Create the following Secret Fields
-        - Field
-        - Field
-        - Field
-        - Field
-        - Field
-        - Field
+        - "Invoke Machine" -> Machine to Invoke Into
+        - "Target AD Forest" -> Target AD Forest - (Can be empty)
+        - "Target AD Domain" -> Target AD Domain - (Can be empty)
+        - "Account Scope" -> Script Scope to run 1 - 4
+            - 1 - Scope of KrbTgt in use by all RWDCs in the AD Domain (DEFAULT)***
+            - 2 - Scope of KrbTgt in use by specific RODC - Single RODC in the AD Domain
+            - 3 - Scope of KrbTgt in use by specific RODC - Multiple RODCs in the AD Domain
+            - 4 - Scope of KrbTgt in use by specific RODC - All RODCs in the AD Domain
+        - "AD Domain Controller Account(s)" -> AD Domain Controller Account to Target
+        - "Run Option" -> Run Option
+            - 1 - Informational Mode (No Changes At All)
+            - 2 - Simulation Mode (Temporary Canary Object Created, No Password Reset!)
+            - 3 - Simulation Mode - Use KrbTgt TEST/BOGUS Accounts (Password Will Be Reset Once!)
+            - 4 - Real Reset Mode - Use KrbTgt PROD/REAL Accounts - (Password Will Be Reset Once!) (DEFAULT)***
+            - 8 - Create TEST KrbTgt Accounts
+            - 9 - Cleanup TEST KrbTgt Accounts
+            - 0 - Exit Script 
+        - "Log Path" -> Desired Log Path (will log to "Invoke Machine")
+        - "Fake Password" -> Fake Password (Secret Server Workaroud)
+
     4. Click "Configure Password Changing
     5. Click "Edit"
     6. Check "Enable Password Changing 
