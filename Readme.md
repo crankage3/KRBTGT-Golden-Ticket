@@ -5,6 +5,10 @@ This original script can be found [here](https://github.com/microsoft/New-Krbtgt
 
 
 ## How to use in Secret Server 
+The script leverages the powershell cmdlet "Invoke-Command". In order for the script to work, the environment and user that's running the script must be able to remote into the target machine. 
+
+For help with environment setup, [go here](https://docs.thycotic.com/ss/10.8.0/api-scripting/configuring-winrm-powershell/index.md).
+
 1. **Create Script in Secret Server (Powershell)**
     1. Go to Admin -> Scripts
     2. Under the "Powershell" tab, click "Create New"
