@@ -9,6 +9,7 @@ The script leverages the powershell cmdlet "Invoke-Command". In order for the sc
 
 For help with environment setup, [go here](https://docs.thycotic.com/ss/10.8.0/api-scripting/configuring-winrm-powershell/index.md).
 
+
 1. **Create Script in Secret Server (Powershell)**
     1. Go to Admin -> Scripts
     2. Under the "Powershell" tab, click "Create New"
@@ -21,6 +22,7 @@ For help with environment setup, [go here](https://docs.thycotic.com/ss/10.8.0/a
     5. Under "Password Change Commands" select the script created and enter the following as args: ` -InvokeMachine $INVOKE MACHINE -targetAdforest $TARGET AD FOREST -targetaddomain $TARGET AD DOMAIN -accountscope $Account Scope -dcaccountlist $AD Domain Controller Account(s) -username $[1]$USERNAME -password $[1]$PASSWORD -runoption $RUN OPTION -logpath $LOG PATH`
     6. Save
 3. **Create a Secret Template that using the Password type previously created.**
+    ***(To Import the Secret Template click [here](https://github.com/crankage3/KRBTGT-Golden-Ticket/blob/master/Exports/KRNTGT%20Secret%20Template%20Export.xml))***
     1. Go to Admin -> Secret Templates
     2. Click "Create New"
     3. Create the following Secret Fields
